@@ -2,6 +2,6 @@ package com.example.demo.enums;
 
 
 
-public enum operationType {
+public enum OperationType {
     DEBIT,CREDIT;
 }

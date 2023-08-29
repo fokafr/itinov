@@ -1,16 +1,14 @@
 package com.example.demo.entities;
 
-import com.example.demo.enums.operationType;
+import com.example.demo.enums.OperationType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +17,9 @@ public class AccountOperation {
     Long id;
     private Date operationDate;
     private double operationAmont;
-    private com.example.demo.enums.operationType operationType;
+
+    @Enumerated(EnumType.STRING)
+    private OperationType operationType;
 
     @ManyToOne
     private BankAccount bankAccount;
